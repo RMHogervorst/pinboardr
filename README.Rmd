@@ -20,6 +20,7 @@ knitr::opts_chunk$set(
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://choosealicense.com/licenses/mit/)
 [![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![Travis build status](https://travis-ci.org/RMHogervorst/pinboardr.svg?branch=master)](https://travis-ci.org/RMHogervorst/pinboardr)
 <!-- badges: end -->
 
 The goal of pinboardr is to interact with the [pinboard.in](https://pinboard.in) website. You can use this package
@@ -132,6 +133,6 @@ head(all_tags, 4)
 ```
 
 
-Please note that the 'pinboardr' project is released with a
+Please note that the "pinboardr" project is released with a
 [Contributor Code of Conduct](CODE_OF_CONDUCT.md).
 By contributing to this project, you agree to abide by its terms.

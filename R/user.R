@@ -4,9 +4,9 @@
 #' @inheritParams pb_tags_get
 #' @return the secret RSS key
 #' @export
-pb_user_secret <- function(username=NULL, token=NULL){
-  path="user/secret"
-  result<- retrieve_results(path=path, username = username, token = token)
+pb_user_secret <- function(username = NULL, token = NULL) {
+  path <- "user/secret"
+  result <- retrieve_results(path = path, username = username, token = token)
   result$result
 }
 
@@ -19,8 +19,8 @@ pb_user_secret <- function(username=NULL, token=NULL){
 #' @return token in string format
 #' @inheritParams pb_tags_get
 #' @export
-pb_user_api_token <- function(username=NULL, token=NULL){
-  path="user/api_token/"
-  result<- retrieve_results(path=path, username = username, token = token)
+pb_user_api_token <- function(username = NULL, token = NULL) {
+  path <- "user/api_token/"
+  result <- retrieve_results(path = path, username = username, token = token)
   result$result
 }

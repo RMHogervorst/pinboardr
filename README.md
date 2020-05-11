@@ -12,6 +12,8 @@ status](https://www.r-pkg.org/badges/version/pinboardr)](https://CRAN.R-project.
 [![Project Status: Active – The project has reached a stable, usable
 state and is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![Travis build
+status](https://travis-ci.org/RMHogervorst/pinboardr.svg?branch=master)](https://travis-ci.org/RMHogervorst/pinboardr)
 <!-- badges: end -->
 
 The goal of pinboardr is to interact with the
@@ -173,6 +175,6 @@ head(all_tags, 4)
 #> 4  abTesting     2
 ```
 
-Please note that the ‘pinboardr’ project is released with a [Contributor
+Please note that the “pinboardr” project is released with a [Contributor
 Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this project,
 you agree to abide by its terms.

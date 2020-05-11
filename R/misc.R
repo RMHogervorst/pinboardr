@@ -15,8 +15,8 @@
 #' pb_last_update()
 #' }
 pb_last_update <- function(as_datetime = FALSE, username = NULL, token = NULL) {
-  path = "posts/update"
-  timestamp <- retrieve_results(path=path, username = username, token = token)
+  path <- "posts/update"
+  timestamp <- retrieve_results(path = path, username = username, token = token)
   result <- timestamp$update_time
   if (as_datetime) {
     result <- strptime(result, format = "%Y-%m-%dT%H:%M:%S", tz = "UTC")
@@ -30,7 +30,7 @@ parse_1d_list_to_df <- function(list, col1 = "tag", col2 = "count") {
     tag = names(list),
     count = as.numeric(unlist(list))
   )
-  setNames(tags, c(col1, col2))
+  stats::setNames(tags, c(col1, col2))
 }
 
 remove_empty_vars <- function(vec) {
@@ -53,23 +53,27 @@ concat_args <- function(url = NULL, title = NULL, description = NULL, tags = NUL
   remove_empty_vars(arguments)
 }
 
-url_encode_when_not_null <- function(value){
-  if(!is.null(value)){URLencode(value)}
+url_encode_when_not_null <- function(value) {
+  if (!is.null(value)) {
+    utils::URLencode(value)
+  }
 }
 
-stop_on_more_3_tags <- function(tags){
+stop_on_more_3_tags <- function(tags) {
   if (length(tags) > 3) stop("do not use more than 3 tags")
 }
 
 
-true_false_yes_no <- function(BOOL){
-  if(length(BOOL)==0){
+true_false_yes_no <- function(BOOL) {
+  if (length(BOOL) == 0) {
     ""
-  }else if(BOOL){
+  } else if (BOOL) {
     "yes"
-  }else if (!BOOL){
+  } else if (!BOOL) {
     "no"
-  }else {stop("argument was not TRUE or FALSE")}
+  } else {
+    stop("argument was not TRUE or FALSE")
+  }
 }
 
 
@@ -81,8 +85,8 @@ suggest_to_df <- function(suggest_list) {
     if (length(items) == 0) items <- NA
     h_l[[name]] <- items
   }
-  popular <- na.exclude(h_l$popular)
-  recommended <- na.exclude(h_l$recommended)
+  popular <- stats::na.exclude(h_l$popular)
+  recommended <- stats::na.exclude(h_l$recommended)
   suggested_tags <- data.frame(tag = union(popular, recommended))
   suggested_tags$popular <- suggested_tags$tag %in% popular
   suggested_tags$recommended <- suggested_tags$tag %in% recommended
@@ -100,14 +104,14 @@ tags_parser <- function(tag_vector = NULL) {
   paste0(tag_vector, collapse = "+")
 }
 
-pinboard_dataframe_to_logical_names <- function(api_df){
+pinboard_dataframe_to_logical_names <- function(api_df) {
   api_df <- rename_column(api_df, "description", "title")
   api_df <- rename_column(api_df, "extended", "description")
   api_df <- rename_column(api_df, "shared", "public")
   api_df
 }
 
-rename_column <- function(df, oldname, newname){
+rename_column <- function(df, oldname, newname) {
   names(df)[names(df) == oldname] <- newname
   df
 }

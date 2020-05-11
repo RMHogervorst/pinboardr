@@ -3,3 +3,10 @@
 ^research$
 ^LICENSE\.md$
 ^todo\.md$
+^README\.Rmd$
+^CODE_OF_CONDUCT\.md$
+^cran-comments\.md$
+^\.travis\.yml$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$

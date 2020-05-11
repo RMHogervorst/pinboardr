@@ -22,7 +22,7 @@ pb_tags_get <- function(username = NULL, token = NULL) {
 #'
 #' Notice that 'pinboard.in' does not tell you if a tag
 #' exists or not. It will return a 'done' unless something else goes wrong.
-#' @param tag [REQUIRED] tag the delete
+#' @param tag **REQUIRED** tag the delete
 #' @inheritParams pb_tags_get
 #'
 #' @return text confirmation
@@ -41,8 +41,8 @@ pb_tags_delete <- function(tag, username = NULL, token = NULL) {
 #'
 #' Change the name of a tag. Notice that 'pinboard.in' does not tell you if a tag
 #' exists or not. It will return a 'done' unless something else goes wrong.
-#' @param old [REQUIRED] old tag name
-#' @param new [REQUIRED] new tag name, if empty nothing will happen
+#' @param old **REQUIRED** old tag name
+#' @param new **REQUIRED** new tag name, if empty nothing will happen
 #' @inheritParams pb_tags_get
 #' @return text confirmation
 #' @export
