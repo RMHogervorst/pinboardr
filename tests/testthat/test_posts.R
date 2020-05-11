@@ -28,35 +28,35 @@ test_that("tags_parser works as expected", {
   expect_equal(tags_parser(), "")
 })
 
-test_that("pinboard_dataframe_to_logical_names works",{
+test_that("pinboard_dataframe_to_logical_names works", {
   pinboard_api_output <- data.frame(
-    href="https://nope.com",
-    description="wait this is a title",
-    extended="this is actually a description",
-    meta="ASDFADF8723",
-    hash="ASDFA422723",
-    time="2020-05-11T04:53:53Z",
-    shared="yes",
-    toread="yes",
-    tags="inspiration anothertag"
+    href = "https://nope.com",
+    description = "wait this is a title",
+    extended = "this is actually a description",
+    meta = "ASDFADF8723",
+    hash = "ASDFA422723",
+    time = "2020-05-11T04:53:53Z",
+    shared = "yes",
+    toread = "yes",
+    tags = "inspiration anothertag"
   )
   expected <- data.frame(
-    href="https://nope.com",
-    title="wait this is a title",
-    description="this is actually a description",
-    meta="ASDFADF8723",
-    hash="ASDFA422723",
-    time="2020-05-11T04:53:53Z",
-    public="yes",
-    toread="yes",
-    tags="inspiration anothertag"
+    href = "https://nope.com",
+    title = "wait this is a title",
+    description = "this is actually a description",
+    meta = "ASDFADF8723",
+    hash = "ASDFA422723",
+    time = "2020-05-11T04:53:53Z",
+    public = "yes",
+    toread = "yes",
+    tags = "inspiration anothertag"
   )
   expect_equal(pinboard_dataframe_to_logical_names(pinboard_api_output), expected)
 })
 
 
 test_that("rename_column works", {
-  df= data.frame(falafal= c("one"), house="dog")
-  expected = data.frame(falafal= c("one"), pet="dog")
-  expect_equal(rename_column(df, "house","pet"),expected)
+  df <- data.frame(falafal = c("one"), house = "dog")
+  expected <- data.frame(falafal = c("one"), pet = "dog")
+  expect_equal(rename_column(df, "house", "pet"), expected)
 })
