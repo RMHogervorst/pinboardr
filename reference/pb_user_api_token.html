@@ -42,7 +42,8 @@
 <meta property="og:title" content="Get your api token — pb_user_api_token" />
 <meta property="og:description" content="This is a silly endpoint and function, but I implemented it
 anyways. To reach this endpoint, you already are in possession of your
-token. And I will not implement a username and password authentication." />
+token. And I will not implement a username and password authentication
+because that is inherently unsafe in this API. Be safe people!" />
 
 
 
@@ -74,7 +75,7 @@ token. And I will not implement a username and password authentication." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">pinboardr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
       </span>
     </div>
 
@@ -121,7 +122,8 @@ token. And I will not implement a username and password authentication." />
     <div class="ref-description">
     <p>This is a silly endpoint and function, but I implemented it
 anyways. To reach this endpoint, you already are in possession of your
-token. And I will not implement a username and password authentication.</p>
+token. And I will not implement a username and password authentication
+because that is inherently unsafe in this API. Be safe people!</p>
     </div>
 
     <pre class="usage"><span class='fu'>pb_user_api_token</span>(<span class='kw'>username</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>token</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
@@ -143,6 +145,10 @@ token. And I will not implement a username and password authentication.</p>
 
     <p>token in string format</p>
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
+<span class='fu'>pb_user_api_token</span>()
+}</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

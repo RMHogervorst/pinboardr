@@ -74,7 +74,7 @@ to set up your computer so you can programmaticaly interact with pinboard." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">pinboardr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
       </span>
     </div>
 
@@ -134,7 +134,9 @@ to set up your computer so you can programmaticaly interact with pinboard.</p>
 <p>Go to the <a href='https://pinboard.in/settings/password'>pinboard password page</a>
 and scroll down to API Token.
 It says something like: "this is your API token:
-<code>username:NUMBERSANDLETTERS</code></p><h3>.Renvironment file</h3>
+<code>username:NUMBERSANDLETTERS</code></p>
+
+<h3>.Renvironment file</h3>
 
 
 <p>I would recommend you add the token to your .renviron file, either locally or
@@ -144,21 +146,22 @@ or in your home folder, R will read in the username and token and they will
 be available to pinboardr.
 Use <code>usethis::edit_r_environ()</code> or find the file manually.</p>
 <p>Add to your .renviron file the following
-PB_USERNAME=username
-PB_TOKEN="NUMBERSANDLETTERS"</p>
+<code>PB_USERNAME=username</code>
+<code>PB_TOKEN="NUMBERSANDLETTERS"</code></p>
 <p>Restart the session to make the changes active.</p>
 
-<h3>setting variables locally</h3>
+<h3>Setting variables locally</h3>
 
 
 <p>This is not the recommended approach, but will work nevertheless.
 You can either:</p><ul>
-<li><p>set the variables at the start of your session using Sys.setenv(PB_USERNAME = "username", PB_TOKEN="NUMBERSANDLETTERS")</p></li>
-<li><p>pass the username and token to every command: pb_last_update(username=username, token=NUMBERSANDLETTERS)</p></li>
+<li><p>set the variables at the start of your session using <code><a href='https://rdrr.io/r/base/Sys.setenv.html'>Sys.setenv(PB_USERNAME = "username", PB_TOKEN="NUMBERSANDLETTERS")</a></code></p></li>
+<li><p>pass the username and token to every command: <code><a href='pb_last_update.html'>pb_last_update(username=username, token=NUMBERSANDLETTERS)</a></code></p></li>
 </ul>
+<h3>Why is this not recommended?</h3>
 
-<p>Why is this not recommended?
-This means your secrets, username and token are visible in your .rhistory, and if you save it in a
+
+<p>This means your secrets, username and token are visible in your .rhistory, and if you save it in a
 script, it will be visible to anyone who opens your script. I think you don't want that, but
 my threatmodel is not your threatmodel.</p>
 

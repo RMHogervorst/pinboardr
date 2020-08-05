@@ -5,13 +5,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Connect to pinboard.in service • pinboardr</title>
+<title>Get information from pinboard.in API. • pinboardr</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script><meta property="og:title" content="Connect to pinboard.in service">
+<script src="pkgdown.js"></script><meta property="og:title" content="Get information from pinboard.in API.">
 <meta property="og:description" content="
     Full connectivity to the pinboard.in service. Retrieve bookmarks, add new ones. 
     Add, delete and rename tags, all from the convenience of your R session.">
@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">pinboardr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
       </span>
     </div>
 
@@ -76,17 +76,30 @@
 <a href="#pinboardr" class="anchor"></a>pinboardr</h1></div>
 <!-- badges: start -->
 
-<p>The goal of pinboardr is to interact with the <a href="https://pinboard.in">pinboard.in</a> website. You can use this package to add new bookmarks, delete them, extract all bookmarks, or to add, modify or remove tags. Basically everything you can do through the website, but from an R session. This is a full implementation of all the endpoints in <a href="https://pinboard.in/api" class="uri">https://pinboard.in/api</a>.</p>
-<p>All user facing functions start with <code>pb_*</code> , making it easy to use.</p>
+<p>The goal of pinboardr is to interact with the <a href="https://pinboard.in">pinboard.in</a> website. You can use this package to</p>
+<ul>
+<li>add new bookmarks,</li>
+<li>delete them,</li>
+<li>extract all bookmarks, or</li>
+<li>to add, modify or remove tags</li>
+<li>and interact with notes endpoint.</li>
+</ul>
+<p>Basically everything you can do through the website, but from an R session. This is a full implementation of all the endpoints in <a href="https://pinboard.in/api" class="uri">https://pinboard.in/api</a>.</p>
+<p>All user facing functions start with <code>pb_*</code> , making it easy to use autocompletion in your IDE. Just type <code>pb_</code> and the suggestions come up.</p>
+<div id="what-is-pinboard" class="section level3">
+<h3 class="hasAnchor">
+<a href="#what-is-pinboard" class="anchor"></a>What is pinboard</h3>
 <blockquote>
 <p>Pinboard is a personal archive for things you find online and don’t want to forget. The site has been around since July 2009 and has about 25,000 active users.</p>
 </blockquote>
 <p>If you don’t know what pinboard is, this is not a package for you. If you would like to know more about pinboard, take <a href="https://pinboard.in/tour/">the tour</a>.</p>
+<p>This is NOT a package for ‘pinterest’: An image sharing service. There is a <a href="https://cran.r-project.org/package=rpinterest">rpinterest</a> package for that.</p>
+</div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>You can install the released version of pinboardr from <a href="https://CRAN.R-project.org">CRAN</a> with:</p>
-<div class="sourceCode" id="cb1"><pre class="r"># install.packages("pinboardr") # not yet</pre></div>
+<div class="sourceCode" id="cb1"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"pinboardr"</span>)</pre></div>
 <p>And the development version from <a href="https://github.com/">GitHub</a> with:</p>
 <div class="sourceCode" id="cb2"><pre class="r"><span class="co"># install.packages("devtools")</span>
 <span class="kw pkg">devtools</span><span class="kw ns">::</span><span class="fu">install_github</span>(<span class="st">"RMHogervorst/pinboardr"</span>)</pre></div>
@@ -107,18 +120,18 @@
 <div class="sourceCode" id="cb4"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">pinboardr</span>)</pre></div>
 <p>When was my last update on pinboard?</p>
 <div class="sourceCode" id="cb5"><pre class="r"><span class="fu"><a href="reference/pb_last_update.html">pb_last_update</a></span>()
-<span class="co">#&gt; [1] "2020-05-11T08:05:04Z"</span></pre></div>
+<span class="co">#&gt; [1] "2020-08-05T13:06:31Z"</span></pre></div>
 <p>Get your most recent bookmarks (of a certain tag, or globally)</p>
 <div class="sourceCode" id="cb6"><pre class="r"><span class="no">recent</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/pb_posts_recent.html">pb_posts_recent</a></span>(<span class="kw">tags</span> <span class="kw">=</span> <span class="st">"inspiration"</span>,<span class="kw">count</span> <span class="kw">=</span> <span class="fl">3</span>)
 <span class="no">recent</span>[,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"title"</span>, <span class="st">"toread"</span>,<span class="st">"tags"</span>)]
-<span class="co">#&gt;                                                                                                                                                                                                                                                             title</span>
-<span class="co">#&gt; 1                                                                                                                                                                                         The Stars My Destination — nevver: The Dutch Masters, Tussen Kunst &amp;...</span>
-<span class="co">#&gt; 2                                                                                                                                                                                                                                Lighting Archives - IKEA Hackers</span>
-<span class="co">#&gt; 3 foone on Twitter: "Check out my new keyboard! It's just got 7 switches and a button. You know binary, yeh? Just enter the binary value of the character you want to type, and then push the button. Nothing could be simpler! https://t.co/AmCzHj55dK" / Twitte</span>
-<span class="co">#&gt;   toread                           tags</span>
-<span class="co">#&gt; 1    yes          inspiration blogNotes</span>
-<span class="co">#&gt; 2     no inspiration hardware blogNotes</span>
-<span class="co">#&gt; 3     no           inspiration hardware</span></pre></div>
+<span class="co">#&gt;                                                                                         title</span>
+<span class="co">#&gt; 1 Spijkenisser Eurobruggen (Euro Banknote Bridges) – Spijkenisse, Netherlands - Atlas Obscura</span>
+<span class="co">#&gt; 2                                                                                  Incredibox</span>
+<span class="co">#&gt; 3                                                          How Many of You Are There, Really?</span>
+<span class="co">#&gt;   toread                       tags</span>
+<span class="co">#&gt; 1     no       inspiration location</span>
+<span class="co">#&gt; 2     no          inspiration music</span>
+<span class="co">#&gt; 3     no inspiration hardware video</span></pre></div>
 <p>When did I bookmark all my bookmarks?</p>
 <div class="sourceCode" id="cb7"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">ggplot2</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">dplyr</span>)
@@ -170,11 +183,11 @@
 <p>Get all tags used</p>
 <div class="sourceCode" id="cb11"><pre class="r"><span class="no">all_tags</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/pb_tags_get.html">pb_tags_get</a></span>() <span class="co"># will show all 583 tags I have used</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">all_tags</span>, <span class="fl">4</span>)
-<span class="co">#&gt;          tag count</span>
-<span class="co">#&gt; 1      1960s     1</span>
-<span class="co">#&gt; 2         3d     2</span>
-<span class="co">#&gt; 3 ab-testing     1</span>
-<span class="co">#&gt; 4  abTesting     2</span></pre></div>
+<span class="co">#&gt;                tag count</span>
+<span class="co">#&gt; 1 100DaysToOffload     2</span>
+<span class="co">#&gt; 2            1960s     1</span>
+<span class="co">#&gt; 3               3d     2</span>
+<span class="co">#&gt; 4       ab-testing     1</span></pre></div>
 <p>Please note that the “pinboardr” project is released with a <a href="CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
 </div>
 </div>
