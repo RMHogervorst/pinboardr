@@ -1,6 +1,6 @@
 Package: pinboardr
-Title: Connect to 'pinboard.in' service
-Version: 0.0.0.9000
+Title: Get information from 'pinboard.in' API
+Version: 1.0.0
 Authors@R: 
     person("Roel M.", "Hogervorst", email = "hogervorst.rm@gmail.com", role = c("aut", "cre"),
                           comment = c(ORCID = "0000-0001-7509-0328"))
@@ -19,7 +19,7 @@ Suggests:
     testthat (>= 2.1.0),
     spelling
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
 URL: https://github.com/RMHogervorst/pinboardr
 BugReports: https://github.com/RMHogervorst/pinboardr/issues
 Language: en_US

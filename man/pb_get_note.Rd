@@ -19,3 +19,8 @@ a list containing id, title, created_at, updated_at, length, text and hash
 \description{
 Get one specific note
 }
+\examples{
+\dontrun{
+pb_get_note(id=12345)
+}
+}

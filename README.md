@@ -18,12 +18,21 @@ status](https://travis-ci.org/RMHogervorst/pinboardr.svg?branch=master)](https:/
 
 The goal of pinboardr is to interact with the
 [pinboard.in](https://pinboard.in) website. You can use this package to
-add new bookmarks, delete them, extract all bookmarks, or to add, modify
-or remove tags. Basically everything you can do through the website, but
-from an R session. This is a full implementation of all the endpoints in
+
+  - add new bookmarks,
+  - delete them,
+  - extract all bookmarks, or
+  - to add, modify or remove tags
+  - and interact with notes endpoint.
+
+Basically everything you can do through the website, but from an R
+session. This is a full implementation of all the endpoints in
 <https://pinboard.in/api>.
 
-All user facing functions start with `pb_*` , making it easy to use.
+All user facing functions start with `pb_*` , making it easy to use
+autocompletion in your IDE. Just type `pb_` and the suggestions come up.
+
+### What is pinboard
 
 > Pinboard is a personal archive for things you find online and don’t
 > want to forget. The site has been around since July 2009 and has about
@@ -33,13 +42,17 @@ If you don’t know what pinboard is, this is not a package for you. If
 you would like to know more about pinboard, take [the
 tour](https://pinboard.in/tour/).
 
+This is NOT a package for ‘pinterest’: An image sharing service. There
+is a [rpinterest](https://cran.r-project.org/package=rpinterest) package
+for that.
+
 ## Installation
 
 You can install the released version of pinboardr from
 [CRAN](https://CRAN.R-project.org) with:
 
 ``` r
-# install.packages("pinboardr") # not yet
+install.packages("pinboardr")
 ```
 
 And the development version from [GitHub](https://github.com/) with:
@@ -80,7 +93,7 @@ When was my last update on pinboard?
 
 ``` r
 pb_last_update()
-#> [1] "2020-05-11T08:05:04Z"
+#> [1] "2020-08-05T13:06:31Z"
 ```
 
 Get your most recent bookmarks (of a certain tag, or globally)
@@ -88,14 +101,14 @@ Get your most recent bookmarks (of a certain tag, or globally)
 ``` r
 recent <- pb_posts_recent(tags = "inspiration",count = 3)
 recent[,c("title", "toread","tags")]
-#>                                                                                                                                                                                                                                                             title
-#> 1                                                                                                                                                                                         The Stars My Destination — nevver: The Dutch Masters, Tussen Kunst &...
-#> 2                                                                                                                                                                                                                                Lighting Archives - IKEA Hackers
-#> 3 foone on Twitter: "Check out my new keyboard! It's just got 7 switches and a button. You know binary, yeh? Just enter the binary value of the character you want to type, and then push the button. Nothing could be simpler! https://t.co/AmCzHj55dK" / Twitte
-#>   toread                           tags
-#> 1    yes          inspiration blogNotes
-#> 2     no inspiration hardware blogNotes
-#> 3     no           inspiration hardware
+#>                                                                                         title
+#> 1 Spijkenisser Eurobruggen (Euro Banknote Bridges) – Spijkenisse, Netherlands - Atlas Obscura
+#> 2                                                                                  Incredibox
+#> 3                                                          How Many of You Are There, Really?
+#>   toread                       tags
+#> 1     no       inspiration location
+#> 2     no          inspiration music
+#> 3     no inspiration hardware video
 ```
 
 When did I bookmark all my bookmarks?
@@ -168,11 +181,11 @@ Get all tags used
 ``` r
 all_tags <- pb_tags_get() # will show all 583 tags I have used
 head(all_tags, 4)
-#>          tag count
-#> 1      1960s     1
-#> 2         3d     2
-#> 3 ab-testing     1
-#> 4  abTesting     2
+#>                tag count
+#> 1 100DaysToOffload     2
+#> 2            1960s     1
+#> 3               3d     2
+#> 4       ab-testing     1
 ```
 
 Please note that the “pinboardr” project is released with a [Contributor

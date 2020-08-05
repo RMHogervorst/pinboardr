@@ -20,3 +20,8 @@ id, hash, title, length, created_at and updated_at.
 When you know the id, you can use the other endpoint
 pb_get_note
 }
+\examples{
+\dontrun{
+pb_get_notes_overview()
+}
+}

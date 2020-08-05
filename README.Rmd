@@ -23,13 +23,24 @@ knitr::opts_chunk$set(
 [![Travis build status](https://travis-ci.org/RMHogervorst/pinboardr.svg?branch=master)](https://travis-ci.org/RMHogervorst/pinboardr)
 <!-- badges: end -->
 
-The goal of pinboardr is to interact with the [pinboard.in](https://pinboard.in) website. You can use this package
-to add new bookmarks, delete them, extract all bookmarks, or to add, modify or remove tags.
+The goal of pinboardr is to interact with the [pinboard.in](https://pinboard.in) website. 
+You can use this package
+to 
+
+- add new bookmarks, 
+- delete them, 
+- extract all bookmarks, or 
+- to add, modify or remove tags
+- and interact with notes endpoint.
+
+
 Basically everything you can do through the website, but from an R session.
 This is a full implementation of all the endpoints in <https://pinboard.in/api>.
 
-All user facing functions start with `pb_*` , making it easy to use.
+All user facing functions start with `pb_*` , making it easy to use autocompletion
+in your IDE. Just type `pb_` and the suggestions come up.
 
+### What is pinboard
 
 > Pinboard is a personal archive for things you find online and don't want to forget.
 > The site has been around since July 2009 and has about 25,000 active users.
@@ -37,12 +48,15 @@ All user facing functions start with `pb_*` , making it easy to use.
 If you don't know what pinboard is, this is not a package for you. 
 If you would like to know more about pinboard, take [the tour](https://pinboard.in/tour/).
 
+This is NOT a package for 'pinterest': An image sharing service. There is
+a [rpinterest](https://cran.r-project.org/package=rpinterest) package for that.
+
 ## Installation
 
 You can install the released version of pinboardr from [CRAN](https://CRAN.R-project.org) with:
 
 ``` r
-# install.packages("pinboardr") # not yet
+install.packages("pinboardr")
 ```
 
 And the development version from [GitHub](https://github.com/) with:
@@ -108,6 +122,7 @@ Did I read all my bookmarks with the tag inspiration?
 all <- pb_posts_all(tags = "inspiration", todt="2020-01-01")
 table(all$toread)
 ```
+
 Most common tags with inspiration
 
 ```{r}
@@ -127,6 +142,7 @@ all_blogidea[all_blogidea$blogidea,c("href","title")]
 ```
 
 Get all tags used
+
 ```{r}
 all_tags <- pb_tags_get() # will show all 583 tags I have used
 head(all_tags, 4)

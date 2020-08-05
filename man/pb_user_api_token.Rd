@@ -17,5 +17,11 @@ token in string format
 \description{
 This is a silly endpoint and function, but I implemented it
 anyways. To reach this endpoint, you already are in possession of your
-token. And I will not implement a username and password authentication.
+token. And I will not implement a username and password authentication
+because that is inherently unsafe in this API. Be safe people!
+}
+\examples{
+\dontrun{
+pb_user_api_token()
+}
 }

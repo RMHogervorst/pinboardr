@@ -17,7 +17,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' pb_posts_add()
+#' pb_posts_add(url="https://example.com", title="an example website")
 #' }
 pb_posts_add <- function(url, title, description = NULL, tags = NULL, dt = NULL, replace = NULL, public = NULL, toread = NULL, username = NULL, token = NULL) {
   stop_on_no_url(url)

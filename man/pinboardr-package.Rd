@@ -4,7 +4,7 @@
 \name{pinboardr-package}
 \alias{pinboardr}
 \alias{pinboardr-package}
-\title{pinboardr: Connect to 'pinboard.in' service}
+\title{pinboardr: Get information from 'pinboard.in' API}
 \description{
 Full connectivity to the 'pinboard.in' service. Retrieve bookmarks, add new ones. 
     Add, delete and rename tags, all from the convenience of your R session.

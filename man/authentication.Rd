@@ -16,6 +16,8 @@ Go to the \href{https://pinboard.in/settings/password}{pinboard password page}
 and scroll down to API Token.
 It says something like: "this is your API token:
 \code{username:NUMBERSANDLETTERS}
+}
+
 \subsection{.Renvironment file}{
 
 I would recommend you add the token to your .renviron file, either locally or
@@ -26,22 +28,22 @@ be available to pinboardr.
 Use \code{usethis::edit_r_environ()} or find the file manually.
 
 Add to your .renviron file the following
-PB_USERNAME=username
-PB_TOKEN="NUMBERSANDLETTERS"
+\code{PB_USERNAME=username}
+\code{PB_TOKEN="NUMBERSANDLETTERS"}
 
 Restart the session to make the changes active.
 }
 
-\subsection{setting variables locally}{
+\subsection{Setting variables locally}{
 
 This is not the recommended approach, but will work nevertheless.
 You can either:
 \itemize{
-\item set the variables at the start of your session using Sys.setenv(PB_USERNAME = "username", PB_TOKEN="NUMBERSANDLETTERS")
-\item pass the username and token to every command: pb_last_update(username=username, token=NUMBERSANDLETTERS)
+\item set the variables at the start of your session using \code{Sys.setenv(PB_USERNAME = "username", PB_TOKEN="NUMBERSANDLETTERS")}
+\item pass the username and token to every command: \code{pb_last_update(username=username, token=NUMBERSANDLETTERS)}
 }
+\subsection{Why is this not recommended?}{
 
-Why is this not recommended?
 This means your secrets, username and token are visible in your .rhistory, and if you save it in a
 script, it will be visible to anyone who opens your script. I think you don't want that, but
 my threatmodel is not your threatmodel.

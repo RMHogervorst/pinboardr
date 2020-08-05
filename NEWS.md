@@ -1,3 +1,9 @@
+# pinboardr 1.0.0
+
+* Checked if all functions have export and examples
+* Checked against multiple R versions on mac
+* Clarified some things in Readme
+
 # pinboardr 0.0.0.9000
 
 * Added a `NEWS.md` file to track changes to the package.

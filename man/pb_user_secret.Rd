@@ -17,3 +17,8 @@ the secret RSS key
 \description{
 Get your secret RSS key for private feeds.
 }
+\examples{
+\dontrun{
+pb_user_secret()
+}
+}

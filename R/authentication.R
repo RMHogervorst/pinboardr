@@ -13,7 +13,7 @@
 #' `username:NUMBERSANDLETTERS`
 #'
 #'
-#' ### .Renvironment file
+#' ## .Renvironment file
 #' I would recommend you add the token to your .renviron file, either locally or
 #' globally. A full introduction how these files work is beyond the scope
 #' of this doc but if you create a 'hidden' file named .Renviron in the project folder
@@ -22,19 +22,19 @@
 #' Use `usethis::edit_r_environ()` or find the file manually.
 #'
 #' Add to your .renviron file the following
-#' PB_USERNAME=username
-#' PB_TOKEN="NUMBERSANDLETTERS"
+#' `PB_USERNAME=username`
+#' `PB_TOKEN="NUMBERSANDLETTERS"`
 #'
 #' Restart the session to make the changes active.
 #'
-#' ### setting variables locally
+#' ## Setting variables locally
 #' This is not the recommended approach, but will work nevertheless.
 #' You can either:
 #'
-#' - set the variables at the start of your session using Sys.setenv(PB_USERNAME = "username", PB_TOKEN="NUMBERSANDLETTERS")
-#' - pass the username and token to every command: pb_last_update(username=username, token=NUMBERSANDLETTERS)
+#' - set the variables at the start of your session using `Sys.setenv(PB_USERNAME = "username", PB_TOKEN="NUMBERSANDLETTERS")`
+#' - pass the username and token to every command: `pb_last_update(username=username, token=NUMBERSANDLETTERS)`
 #'
-#' Why is this not recommended?
+#' ### Why is this not recommended?
 #' This means your secrets, username and token are visible in your .rhistory, and if you save it in a
 #' script, it will be visible to anyone who opens your script. I think you don't want that, but
 #' my threatmodel is not your threatmodel.

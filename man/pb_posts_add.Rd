@@ -46,6 +46,6 @@ You must give a url and description, all other arguments are optional.
 }
 \examples{
 \dontrun{
-pb_posts_add()
+pb_posts_add(url="https://example.com", title="an example website")
 }
 }
