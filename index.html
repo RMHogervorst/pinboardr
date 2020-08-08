@@ -120,18 +120,18 @@
 <div class="sourceCode" id="cb4"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">pinboardr</span>)</pre></div>
 <p>When was my last update on pinboard?</p>
 <div class="sourceCode" id="cb5"><pre class="r"><span class="fu"><a href="reference/pb_last_update.html">pb_last_update</a></span>()
-<span class="co">#&gt; [1] "2020-08-05T13:06:31Z"</span></pre></div>
+<span class="co">#&gt; [1] "2020-08-07T20:07:04Z"</span></pre></div>
 <p>Get your most recent bookmarks (of a certain tag, or globally)</p>
 <div class="sourceCode" id="cb6"><pre class="r"><span class="no">recent</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/pb_posts_recent.html">pb_posts_recent</a></span>(<span class="kw">tags</span> <span class="kw">=</span> <span class="st">"inspiration"</span>,<span class="kw">count</span> <span class="kw">=</span> <span class="fl">3</span>)
 <span class="no">recent</span>[,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"title"</span>, <span class="st">"toread"</span>,<span class="st">"tags"</span>)]
 <span class="co">#&gt;                                                                                         title</span>
-<span class="co">#&gt; 1 Spijkenisser Eurobruggen (Euro Banknote Bridges) – Spijkenisse, Netherlands - Atlas Obscura</span>
-<span class="co">#&gt; 2                                                                                  Incredibox</span>
-<span class="co">#&gt; 3                                                          How Many of You Are There, Really?</span>
-<span class="co">#&gt;   toread                       tags</span>
-<span class="co">#&gt; 1     no       inspiration location</span>
-<span class="co">#&gt; 2     no          inspiration music</span>
-<span class="co">#&gt; 3     no inspiration hardware video</span></pre></div>
+<span class="co">#&gt; 1                                                                 Proof of X « julian.digital</span>
+<span class="co">#&gt; 2 Spijkenisser Eurobruggen (Euro Banknote Bridges) – Spijkenisse, Netherlands - Atlas Obscura</span>
+<span class="co">#&gt; 3                                                                                  Incredibox</span>
+<span class="co">#&gt;   toread                         tags</span>
+<span class="co">#&gt; 1     no inspiration processInSlipbox</span>
+<span class="co">#&gt; 2     no         inspiration location</span>
+<span class="co">#&gt; 3     no            inspiration music</span></pre></div>
 <p>When did I bookmark all my bookmarks?</p>
 <div class="sourceCode" id="cb7"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">ggplot2</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">dplyr</span>)
@@ -188,7 +188,7 @@
 <span class="co">#&gt; 2            1960s     1</span>
 <span class="co">#&gt; 3               3d     2</span>
 <span class="co">#&gt; 4       ab-testing     1</span></pre></div>
-<p>Please note that the “pinboardr” project is released with a <a href="CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
+<p>Please note that the “pinboardr” project is released with a <a href="https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
 </div>
 </div>
   </div>
