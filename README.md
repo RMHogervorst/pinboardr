@@ -93,7 +93,7 @@ When was my last update on pinboard?
 
 ``` r
 pb_last_update()
-#> [1] "2020-08-05T13:06:31Z"
+#> [1] "2020-08-07T20:07:04Z"
 ```
 
 Get your most recent bookmarks (of a certain tag, or globally)
@@ -102,13 +102,13 @@ Get your most recent bookmarks (of a certain tag, or globally)
 recent <- pb_posts_recent(tags = "inspiration",count = 3)
 recent[,c("title", "toread","tags")]
 #>                                                                                         title
-#> 1 Spijkenisser Eurobruggen (Euro Banknote Bridges) – Spijkenisse, Netherlands - Atlas Obscura
-#> 2                                                                                  Incredibox
-#> 3                                                          How Many of You Are There, Really?
-#>   toread                       tags
-#> 1     no       inspiration location
-#> 2     no          inspiration music
-#> 3     no inspiration hardware video
+#> 1                                                                 Proof of X « julian.digital
+#> 2 Spijkenisser Eurobruggen (Euro Banknote Bridges) – Spijkenisse, Netherlands - Atlas Obscura
+#> 3                                                                                  Incredibox
+#>   toread                         tags
+#> 1     no inspiration processInSlipbox
+#> 2     no         inspiration location
+#> 3     no            inspiration music
 ```
 
 When did I bookmark all my bookmarks?
@@ -189,5 +189,6 @@ head(all_tags, 4)
 ```
 
 Please note that the “pinboardr” project is released with a [Contributor
-Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this project,
-you agree to abide by its terms.
+Code of
+Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html).
+By contributing to this project, you agree to abide by its terms.
